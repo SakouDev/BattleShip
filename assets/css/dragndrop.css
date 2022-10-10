@@ -1,0 +1,353 @@
+* {
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+
+body {
+  background: url(../img/Background.jpg);
+  z-index: 0;
+  margin: 0;
+
+}
+
+.container{
+    width: 93%;
+    display: flex;
+    flex-direction: row;
+}
+
+.squad {
+    width: 25vw;
+    height: 70vh;
+    overflow-y: scroll;
+    border-radius: 10px;
+    margin: 3vw;
+    background-color: rgb(255, 255, 255, 0.5);
+}
+
+.squad_header>h1{
+  color: white;
+  padding: 2vh 0;
+  top: 0;
+}
+
+.squad_header>p {
+    text-align: center;
+    padding: 0 0 1vh 0;
+    margin: 0 0 1vh 0;
+    border-bottom: 2px solid black;
+
+}
+
+#players {
+  margin-bottom: 10px;
+  color: white;
+  padding: 2vh 0;
+  position: sticky;
+  z-index: 10;
+  background-color: #0A3D5B;
+  top: 0;
+}
+
+.squad::-webkit-scrollbar { 
+  width: 0 ! important 
+}
+
+.squadname {
+  font-size: 1.2em;
+  width: 80%;
+  height: 5vh;
+  text-align: center;
+  border: none;
+  background-color: #0A3D5B;
+  color: white;
+  border-radius: 10px;
+}
+.squadname::placeholder {
+  color: white;
+}
+h1 {
+  text-align: center;
+}
+
+
+.challenger {
+  width: 90%;
+  height: 6vh;
+  padding: 2%;
+  margin: 2px auto;
+  margin-top: 5px;
+  border: 1px black solid;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  flex: row;
+}
+
+.challenger h1{
+    margin-left: 0.5vw;
+    text-align: left;
+    justify-content: center;
+    font-size: 1.5em;
+    min-width: 5vw;
+    max-width: 5vw;
+}
+.data {
+  min-width: 5vw;
+  max-width: 5vw;
+  text-align: center;
+  margin-left: 2vw;
+}
+
+.hide_drop {
+  display: none;
+}
+
+#btn {
+  width: 20vw;
+  height: 5vh;
+  margin: 0 auto;
+  background-image: url(../img/missile.png);
+}
+input[type="submit"]{
+  cursor:pointer;
+ }
+
+select{
+    border-radius: 10px;
+    height: 3vh;
+    padding-left: 10px;
+}
+
+
+
+#backIndex{
+  position:absolute;
+  top: 0%;
+  left: 0%;
+  height: 50px;
+  width: 50px;
+  background-color: white;
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+/* ### Bouton GO ### */
+
+.btncontainer {
+  margin: 10px auto;
+  text-align: center;
+  max-width: 500px;
+  width: 100%;
+  position: relative;
+}
+/*common button css  */
+
+.btncontainer input[type="submit"] {
+    border: 1px solid #0A3D5B;
+    width: 400px;
+    color: #0A3D5B;
+    padding: 20px 60px;
+    font-size: 18px;
+    font-weight: 500;
+    background: white;
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 15px;
+    margin-bottom: 30px;
+    border-radius: 3px;
+    text-transform: capitalize;
+}
+
+.btncontainer input:focus {
+    outline: none;
+}
+
+/* slide hover left css */
+
+.btncontainer input.slide-hover-left {
+    background-image: linear-gradient(0, #0A3D5B, #0A3D5B);
+    background-size: 0;
+    transition: .8s;
+    background-repeat: no-repeat;
+    transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+}
+
+.btncontainer input.slide-hover-left:hover {
+    background-size: 100%;
+    color: #fff;
+}
+
+
+div.backBtn {
+  width: 100px;
+  left: 100px;
+  top: 100px;
+  background-color: #f4f4f4;
+  transition: all 0.4s ease;
+  position: fixed;
+  cursor: pointer;
+}
+
+span.line {
+  bottom: auto;
+  right: auto;
+  top: auto;
+  left: auto;
+  background-color: #333;
+  border-radius: 10px;
+  width: 100%;
+  left: 0px;
+  height: 2px;
+  display: block;
+  position: absolute;
+  transition: width 0.2s ease 0.1s, left 0.2s ease, transform 0.2s ease 0.3s, background-color 0.2s ease;
+}
+
+span.tLine {
+  top: 0px;
+}
+
+span.mLine {
+  top: 13px;
+  opacity: 0;
+}
+
+span.bLine {
+  top: 26px;
+}
+
+.label {
+  position: absolute;
+  left: 0px;
+  top: 5px;
+  width: 100%;
+  text-align: center;
+  transition: all 0.4s ease;
+  font-size: 1em;
+}
+
+div.backBtn:hover span.label {
+  left: 25px
+}
+
+div.backBtn:hover span.line {
+  left: -10px;
+  height: 5px;
+  background-color: #F76060;
+}
+
+div.backBtn:hover span.tLine {
+  width: 25px;
+  transform: rotate(-45deg);
+  left: -15px;
+  top: 6px;
+}
+
+div.backBtn:hover span.mLine {
+  opacity: 1;
+  width: 30px;
+}
+
+div.backBtn:hover span.bLine {
+  width: 25px;
+  transform: rotate(45deg);
+  left: -15px;
+  top: 20px;
+}
+
+
+#backButton{
+  width: 140px;
+  height: 50px;
+  left: 30px;
+  top: 90%;
+  position: absolute;
+  background: white;
+  border-radius: 10px;
+}
+
+div.backBtn {
+  width: 100px;
+  left: 50px;
+  top: 91%;
+  background-color: #f4f4f4;  
+  transition: all 0.4s ease;
+  position: fixed;
+  cursor: pointer;
+}
+
+span.line {
+  bottom: auto;
+  right: auto;
+  top: auto;
+  left: auto;
+  background-color: #333;
+  border-radius: 10px;
+  width: 100%;
+  left: 0px;
+  height: 2px;
+  display: block;
+  position: absolute;
+  transition: width 0.2s ease 0.1s, left 0.2s ease, transform 0.2s ease 0.3s, background-color 0.2s ease;
+}
+
+span.tLine {
+  top: 0px;
+}
+
+span.mLine {
+  top: 13px;
+  opacity: 0;
+}
+
+span.bLine {
+  top: 26px;
+}
+
+.label {
+  position: absolute;
+  left: 0px;
+  top: 5px;
+  width: 100%;
+  text-align: center;
+  transition: all 0.4s ease;
+  font-size: 1em;
+}
+
+div.backBtn:hover span.label {
+  left: 25px
+}
+
+div.backBtn:hover span.line {
+  left: -10px;
+  height: 5px;
+  background-color: #F76060;
+}
+
+div.backBtn:hover span.tLine {
+  width: 25px;
+  transform: rotate(-45deg);
+  left: -15px;
+  top: 6px;
+}
+
+div.backBtn:hover span.mLine {
+  opacity: 1;
+  width: 30px;
+}
+
+div.backBtn:hover span.bLine {
+  width: 25px;
+  transform: rotate(45deg);
+  left: -15px;
+  top: 20px;
+}

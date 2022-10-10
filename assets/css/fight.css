@@ -1,0 +1,584 @@
+
+body {
+    margin: 0 0;
+    padding: 0 0;
+    display: flex;
+    flex-direction: row;
+    background: url(../img/WaterMC.gif);
+    background-size: repeat;
+}
+
+p {
+    margin: 0;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+}
+
+
+#logs-area {
+    width: 30%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 100vh;
+    border-radius: 20px 0 0 20px ;
+    border-left: solid 5px black;
+}
+
+#logs-area::-webkit-scrollbar { 
+    width: 0 ! important 
+}
+
+.turn-counter {
+    margin: 0 0 2% 0;
+    text-align: center;
+}
+
+.victory {
+    text-align: center;
+}
+
+#logs-area>div {
+    width: 100%;
+    padding: 3%;
+}
+#logs-area>:nth-of-type(2n) {
+    background-color: rgba(0,0,0, 0.8);
+    color: white;
+}
+#logs-area>:nth-of-type(2n+1) {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+#logs-area>:last-child {
+    width: 100%;
+    margin: 0;
+    padding: 3%;
+    font-size: 1.8rem;
+    font-weight: bold;
+    background-color: rgb(33, 148, 33);
+    color: black;
+    position: sticky;
+    bottom:0%;
+}
+
+
+
+
+#battle-area {
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+#leftShip{
+    position: relative;
+    left: -10%;
+    width: 20vw;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size:38vh;
+    overflow: hidden;
+}
+#rightShip{
+    position: relative;
+    right: -10%;
+    width: 20vw;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size:38vh;
+    overflow: hidden;
+}
+
+#buttons-left {
+    position: absolute;
+    bottom: 0;
+    left: 150px;
+}
+#buttons-right {
+    position: absolute;
+    bottom: 0;
+    right: 750px;
+}
+.shipBtn {
+    height: 50px;
+}
+
+#bardLeft {
+    z-index: 100;
+    position: absolute;
+    top: 5%;
+    left: 13%;
+    width: 256px;
+    height: 256px;
+    background: url(../img/Bard.gif);
+    transform: scale(0.5);
+}
+#bardRight {
+    z-index: 100;
+    position: absolute;
+    top: 5%;
+    right: 42%;
+    width: 256px;
+    height: 256px;
+    background: url(../img/Bard.gif);
+    transform: scale(-0.5,0.5);
+}
+
+#QuickBtn {
+    z-index: 100;
+    position: absolute;
+    top: 62%;
+    left: 30.5%;
+    width: 10%;
+    height: 5%;
+    border-radius: 15px;
+    font-size: 1.3rem;
+}
+
+/* HP bars */
+
+.hpBarContainer {
+    position: relative;
+    top: 80%;
+    left: 45%;
+    width: 65px;
+    height: 17px;
+    background-color: red;
+    border: 1px solid black;
+}
+
+.remainingHpBar {
+    height: 17px;
+    background-color: green;
+    text-align: center;
+}
+
+.hpBarText {
+    position: relative;
+    top: 74%;
+    left: 46%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 25.6%;
+    text-align: center;
+    font-weight: bolder;
+}
+
+.characterName {
+    position: relative;
+    top: 25%;
+    left: 46%;
+    width: 25%;
+    text-align: center;
+    font-weight: bolder;
+    margin: 0 !important;
+    text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em green;
+}
+
+.dmgTaken {
+    font-size: 1.8rem;
+    font-weight: bold;
+    position: relative;
+    text-align: center;
+    line-height: 306%;
+    top: 16%;
+    left: 47%;
+    width: 49%;
+    height: 30%;
+    background-image: url(../img/BackgroundDamage.png);
+    background-size: cover;
+}
+
+.dmgLeft{
+    animation: dmgLeft 1s ease-in-out infinite alternate;
+}
+
+.dmgRight{
+    animation: dmgRight 1s ease-in-out infinite alternate;
+}
+
+@keyframes dmgLeft {
+    from {
+        transform: rotate(5deg) scale(0.8);
+        text-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red, 0 0 40px #ff9900,
+        0 0 70px #ff9900, 0 0 80px #ff9900, 0 0 100px #ff9900, 0 0 150px #ff9900;
+    }
+    to {
+        transform: rotate(-5deg) scale(1.2);
+        text-shadow: 0 0 5px red, 0 0 10px red, 0 0 15px red, 0 0 20px #ff9900,
+        0 0 35px #ff9900, 0 0 40px #ff9900, 0 0 50px #ff9900, 0 0 75px #ff9900;
+    }
+  }
+
+  @keyframes dmgRight {
+    from {
+        transform: rotate(5deg) scale(-0.8,0.8);
+        text-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red, 0 0 40px #ff9900,
+        0 0 70px #ff9900, 0 0 80px #ff9900, 0 0 100px #ff9900, 0 0 150px #ff9900;
+    }
+    to {
+        transform: rotate(-5deg) scale(-1.2,1.2);
+        text-shadow: 0 0 5px red, 0 0 10px red, 0 0 15px red, 0 0 20px #ff9900,
+        0 0 35px #ff9900, 0 0 40px #ff9900, 0 0 50px #ff9900, 0 0 75px #ff9900;
+    }
+  }
+
+
+.rightCrewText {
+    transform: scaleX(-1);
+}
+
+
+/*ANIMATION*/
+
+@keyframes crit {
+    0% {
+        top: 22.5%;
+        height: 0%;
+    }
+    10% {
+        top:2.5%;
+        height: 30%;
+    }
+    50% {
+        top:1.5%;
+        height: 31%;
+    }
+    90% {
+        top:2.5%;
+        height: 30%;
+    }
+    100% {
+        top: 15.5%;
+        height: 0%;
+    }
+}
+
+@keyframes critRight {
+    0% {
+        top: 55%;
+        height: 0%;
+    }
+    10% {
+        top:35%;
+        height: 30%;
+    }
+    50% {
+        top:34%;
+        height: 31%;
+    }
+    90% {
+        top:35%;
+        height: 30%;
+    }
+    100% {
+        top: 55%;
+        height: 0%;
+    }
+}
+
+.critLeft {
+    position:absolute;
+    top:40vh;
+    width: 70%;
+    height: 30%;
+    background: url(../img/Try.gif) ;
+    background-size: cover;
+    z-index: 100;
+    animation: crit 1.4s ease forwards;
+}
+.avatarLeft {
+    position: relative;
+    top: 0%;
+    left: 0%;
+    z-index: 102;
+    background: url(../img/Crit/Canonneer.png) no-repeat;
+    width: 50%;
+    overflow-y: hidden;
+    height: 100%;
+    animation: slide-right 1.4s cubic-bezier(0,-0.32, 1,-0.38);
+}
+
+.critRight {
+    position:absolute;
+    top:40vh;
+    width: 70%;
+    height: 30%;
+    background: url(../img/Try.gif) ;
+    background-size: cover;
+    transform: scaleX(-1);
+    z-index: 100;
+    animation: crit 1.4s ease forwards;
+}
+.avatarRight {
+    position: relative;
+    top: 0%;
+    left: 0%;
+    z-index: 102;
+    background: url(../img/Crit/Canonneer.png) no-repeat;
+
+    width: 50%;
+    overflow-y: hidden;
+    height: 100%;
+    animation: slide-left 1.4s cubic-bezier(0,-0.32, 1,-0.38);
+}
+
+
+@keyframes slide-right{
+    0% {
+        left: 15%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+@keyframes slide-left{
+    0% {
+        left: 17%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+#goCrit {
+    position:absolute;
+    top: 0%;
+    left: 0%;
+    height: 50px;
+    width: 50px;
+    background-color: white;
+    text-align: center;
+}
+#goCrit2 {
+    position:absolute;
+    top: 0%;
+    left: 50%;
+    height: 50px;
+    width: 100px;
+    background-color: white;
+    text-align: center;
+}
+
+
+#leftShipChar1 {
+    background-size: cover;
+    position: relative;
+    top: 39%;
+    left: 38%;
+    width: 240px;
+    height: 280px;
+}
+
+#leftShipChar2 {
+    background-size: cover;
+    position: relative;
+    top: 5%;
+    left: -1%;
+    width: 240px;
+    height: 280px;
+}
+
+#leftShipChar3 {
+    background-size: cover;
+    position: relative;
+    top: -4%;
+    left: 1%;
+    width: 240px;
+    height: 280px;
+}
+
+#leftShipChar4 {
+    background-size: cover;
+    position: relative;
+    top: -55%;
+    left: 38%;
+    width: 240px;
+    height: 280px;
+}
+
+#leftShipChar5 {
+    background-size: cover;
+    position: relative;
+    top: -47%;
+    left: 38%;
+    width: 240px;
+    height: 280px;
+}
+
+#rightShipChar1 {
+    background-size: cover;
+    position: relative;
+    top: 39%;
+    right: -5%;
+    width: 240px;
+    height: 280px;
+    transform: scaleX(-1);
+}
+
+#rightShipChar2 {
+    background-size: cover;
+    position: relative;
+    top: 5%;
+    right: -41%;
+    width: 240px;
+    height: 280px;
+    transform: scaleX(-1);
+}
+
+#rightShipChar3 {
+    background-size: cover;
+    position: relative;
+    top: -4%;
+    right: -41%;
+    width: 240px;
+    height: 280px;
+    transform: scaleX(-1);
+}
+
+#rightShipChar4 {
+    background-size: cover;
+    position: relative;
+    top: -55%;
+    right: -5%;
+    width: 240px;
+    height: 280px;
+    transform: scaleX(-1);
+}
+
+#rightShipChar5 {
+    background-size: cover;
+    position: relative;
+    top: -47%;
+    right: -5%;
+    width: 240px;
+    height: 280px;
+    transform: scaleX(-1);
+}
+
+.hidden {
+    display: none;
+}
+
+
+
+#goMatch{
+    z-index: 100000;
+    position: absolute;
+    top: 50%;
+    left: 30.5%;
+    width: 10%;
+    height: 10%;
+    border-radius: 20px;
+    background-image: url(../img/Rainbow.gif);
+    background-size: cover;
+    border: solid 2px white;
+    font-size: 2em;
+    font-weight: bolder;
+}
+
+#reloadGame {
+    z-index: 100000;
+    position: absolute;
+    top: 50%;
+    left: 30.5%;
+    width: 10%;
+    height: 10%;
+    border-radius: 20px;
+    background-image: url(../img/Rainbow.gif);
+    background-size: cover;
+    border: solid 2px white;
+    font-size: 1.8em;
+    font-weight: bolder;
+}
+
+#backButton{
+    width: 140px;
+    height: 50px;
+    left: 30px;
+    top: 40px;
+    position: absolute;
+    background: white;
+    border-radius: 10px;
+  }
+  
+  div.backBtn {
+    width: 100px;
+    left: 50px;
+    top: 50px;
+    background-color: #f4f4f4;  
+    transition: all 0.4s ease;
+    position: fixed;
+    cursor: pointer;
+  }
+  
+  span.line {
+    bottom: auto;
+    right: auto;
+    top: auto;
+    left: auto;
+    background-color: #333;
+    border-radius: 10px;
+    width: 100%;
+    left: 0px;
+    height: 2px;
+    display: block;
+    position: absolute;
+    transition: width 0.2s ease 0.1s, left 0.2s ease, transform 0.2s ease 0.3s, background-color 0.2s ease;
+  }
+  
+  span.tLine {
+    top: 0px;
+  }
+  
+  span.mLine {
+    top: 13px;
+    opacity: 0;
+  }
+  
+  span.bLine {
+    top: 26px;
+  }
+  
+  .label {
+    position: absolute;
+    left: 0px;
+    top: 5px;
+    width: 100%;
+    text-align: center;
+    transition: all 0.4s ease;
+    font-size: 1em;
+  }
+  
+  div.backBtn:hover span.label {
+    left: 25px
+  }
+  
+  div.backBtn:hover span.line {
+    left: -10px;
+    height: 5px;
+    background-color: #F76060;
+  }
+  
+  div.backBtn:hover span.tLine {
+    width: 25px;
+    transform: rotate(-45deg);
+    left: -15px;
+    top: 6px;
+  }
+  
+  div.backBtn:hover span.mLine {
+    opacity: 1;
+    width: 30px;
+  }
+  
+  div.backBtn:hover span.bLine {
+    width: 25px;
+    transform: rotate(45deg);
+    left: -15px;
+    top: 20px;
+  }
