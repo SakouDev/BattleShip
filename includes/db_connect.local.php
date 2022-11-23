@@ -1,10 +1,10 @@
 <?php
 
 function connexion(){
-    $servername = "localhost";
-    $username = "u983603541_Sakou";
-    $password = "B87ce6a6a1e!";
-    $dbname = "u983603541_BattleShip";
+    $servername = "sql8.freesqldatabase.com";
+    $username = "sql8580199";
+    $password = "D4BzEHaBPu";
+    $dbname = "sql8580199";
     try{
         $db = new PDO(
             'mysql:host='.$servername.';dbname='.$dbname.';charset=UTF8',
