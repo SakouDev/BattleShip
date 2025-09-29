@@ -20,7 +20,7 @@
             <div id="form">
                 <h3>Formulaire d'inscription:</h3>
             <?php
-                include 'includes/form.player.php'
+                include_once 'includes/form.player.php'
             ?>
             </div>
         </div>
@@ -38,7 +38,7 @@
             <div id="form">
                 <h3>Formulaire navire:</h3>
             <?php
-                include 'includes/form.ship.php'
+                include_once 'includes/form.ship.php'
             ?>
             </div>
         </div>

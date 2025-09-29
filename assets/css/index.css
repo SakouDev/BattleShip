@@ -1,6 +1,7 @@
 
 body{
-    background: url(../img/Background.jpg);z-index: 0;margin: 0;
+    background: url(../img/Background.jpg);
+    background-size: cover;
 }
 .container{
     width: 100vw;

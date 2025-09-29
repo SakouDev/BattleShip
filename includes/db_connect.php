@@ -1,16 +1,23 @@
 <?php
-    include_once 'db_connect.local.php';
-// $servername = "localhost:3306";
-// $username = "root";
-// $password = "";
-// $dbname = "Test";
 
-// try {
-//   $connect = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-//   $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-// } catch(PDOException $e) {
-//   echo "Connection failed: " . $e->getMessage();
-//   die();
-// }
+function connexion() {
+    $servername = "127.0.0.1";
+    $username   = "battleship_user";
+    $password   = "SuperMotDePasse123!";
+    $dbname     = "battleship";
+
+    try{
+    	$db = new PDO(
+    		'mysql:host='.$servername.';dbname='.$dbname.';charset=UTF8',
+    		$username,
+      		$password
+    	);
+    	$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+      	return $db;
+    }
+    catch(Exception $e){
+      die('Erreur:'.$e->getMessage());
+    }
+}
 
 ?>
